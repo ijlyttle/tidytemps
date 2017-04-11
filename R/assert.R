@@ -1,7 +1,11 @@
 #' Assert that a data frame conforms to tidytemps
 #'
-#' This function is used to assert that a data frame conforms to
-#' the "standard":
+#' Many of the functions in this package assume that data frames supplied
+#' to them conform to a "standard".
+#'
+#' This function will either raise an error, or return the data frame it was sent.
+#'
+#' This is the standard expected of the data frame:
 #'
 #' - it has columns `interval_start` and `interval_duration`
 #' - the column `interval_start` is POSIXct (although we should think of relaxing that to numeric)

@@ -63,6 +63,13 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#tidytemps" class="anchor"></a>tidytemps</h1></div>
 <p>At some point, it will be nice to have a well-formulated grammar and DSL for dealing with time-indexed data frames. Until then, this package is yet another attempt to get that grammar to reveal itself through a half-baked implementation that can be used to solve a few problems.</p>
+<p>The fundamental object is a data frame with some additional restrictions:</p>
+<ul>
+<li>it has columns <code>interval_start</code> and <code>interval_duration</code>.</li>
+<li>the column <code>interval_start</code> is POSIXct (although we should think of relaxing that to numeric)</li>
+<li>the column <code>interval_duration</code> is numeric</li>
+</ul>
+<p>You can check that your data frame is conforming using the function <code><a href="reference/assert_tidytemps.html">assert_tidytemps()</a></code>.</p>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of conduct</h2>
