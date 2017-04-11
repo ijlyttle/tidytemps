@@ -12,7 +12,11 @@ Description: At some point, it will be nice to have a well-formulated grammar
   half-baked implementation that can be used to solve a few problems.
 Depends: R (>= 3.3.2)
 License: MIT + file LICENSE
+Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/ijlyttle/tidytemps
 BugReports: https://github.com/ijlyttle/tidytemps/issues
+RoxygenNote: 6.0.1.9000
+Imports: assertthat,
+    magrittr
