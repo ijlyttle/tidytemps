@@ -81,7 +81,7 @@
 
     
     <p>Many of the functions in this package assume that data frames supplied
-to them conform to a "standard":</p>
+to them conform to a "standard".</p>
     
 
     <pre><span class='fu'>assert_tidytemps</span>(<span class='no'>data</span>)</pre>
@@ -101,8 +101,8 @@ to them conform to a "standard":</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function is used to assert that a data frame conforms to
-this standard:</p><ul>
+    <p>This function will either raise an error, or return the data frame it was sent.</p>
+<p>This is the standard expected of the data frame:</p><ul>
 <li><p>it has columns <code>interval_start</code> and <code>interval_duration</code></p></li>
 <li><p>the column <code>interval_start</code> is POSIXct (although we should think of relaxing that to numeric)</p></li>
 <li><p>the column <code>interval_duration</code> is numeric</p></li>

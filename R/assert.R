@@ -22,7 +22,7 @@ assert_tidytemps <- function(data) {
     is.data.frame(data),
     assertthat::has_name(data, "interval_start"),
     assertthat::has_name(data, "interval_duration"),
-    inherits("POSIXct", data[["interval_start"]]),
+    inherits(data[["interval_start"]], "POSIXct"),
     is.numeric(data[["interval_duration"]])
   )
 

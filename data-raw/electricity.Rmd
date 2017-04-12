@@ -3,16 +3,36 @@
 ```{r}
 library("lubridate")
 library("tidyverse")
+library("devtools")
 ```
 
 ```{r}
 dtm_ref <- ymd_hms("2013-04-01 00:00:00", tz = "America/Chicago")
 interval_duration_ref <- as.numeric(dminutes(15))
 
+
+consumption_rate <- function(dtm, dtm_ref){
+  
+  nday <- (as.numeric(dtm) - as.numeric(dtm_ref)) / as.numeric(ddays(1))
+  
+  consumption_rate <- 300 + 30 * sin(2 * pi * nday) - 10 * nday
+  
+  consumption_rate
+}
 ```
 
 ```{r}
+n_day <- 4
+n_interval <- as.numeric(ddays(n_day))/as.numeric(interval_duration_ref)
+
 electricity <- tibble(
-  
+  interval_start = dtm_ref + seq(0, n_interval - 1)*interval_duration_ref,
+  interval_duration = interval_duration_ref,
+  consumption_rate = consumption_rate(interval_start, dtm_ref),
+  consumption = consumption_rate * interval_duration/as.numeric(dhours(1))
 )
+```
+
+```{r}
+use_data(electricity, overwrite = TRUE)
 ```
