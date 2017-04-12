@@ -5,6 +5,8 @@ tidytemps
 
 [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/tidytemps.svg?branch=master)](https://travis-ci.org/ijlyttle/tidytemps) [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/tidytemps/master.svg)](https://codecov.io/github/ijlyttle/tidytemps?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/tidytemps)](https://cran.r-project.org/package=tidytemps)
 
+Note - this works with the dev version of dplyr.
+
 At some point, it will be nice to have a well-formulated grammar and DSL for dealing with time-indexed data frames. Until then, this package is yet another attempt to get that grammar to reveal itself through a half-baked implementation that can be used to solve a few problems.
 
 The fundamental object is a data frame with some additional restrictions:

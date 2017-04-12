@@ -44,6 +44,11 @@ Let's try this out:
 library("tidytemps")
 library("lubridate")
 library("tidyverse")
+library("hms")
+```
+
+```{r}
+glimpse(electricity)
 ```
 
 ```{r}
@@ -56,6 +61,6 @@ glimpse(electricity_date)
 
 ```{r}
 electricity_date %>%
-  ggplot(aes(x = date_index, y = consumption_rate)) +
-  geom_line(aes(color = as.factor(date)))
+  ggplot(aes(x = as.hms(date_index), y = consumption_rate)) +
+  geom_line(aes(color = as.factor(date))) 
 ```
