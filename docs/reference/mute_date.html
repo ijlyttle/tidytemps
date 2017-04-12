@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • tidytemps</title>
+<title>Characterize a data frame using date — mute_date • tidytemps</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -77,70 +77,52 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0.0.9000</small>
-      </h1>
+    <h1>Characterize a data frame using date</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    
+    <p>Used when we want to characterize a tidytemps data frame by date and time
+within the date. Please make sure that the timezone is set for <code>interval_start</code>.</p>
+    
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <pre><span class='fu'>mute_date</span>(<span class='no'>data</span>, <span class='kw'>duration_ref</span> <span class='kw'>=</span> <span class='kw'>lubridate</span><span class='kw'>::</span><span class='fu'>dhours</span>(<span class='fl'>0</span>))</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>data frame, compliant with <code>assert_tidytemps()</code></p></td>
+    </tr>
+    <tr>
+      <th>duration_ref</th>
+      <td><p>numeric or <a href='http://www.rdocumentation.org/packages/lubridate/topics/Duration-class'>lubridate Duration</a>,
+number of seconds after local midnight at the start of the date</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="assert_tidytemps.html">assert_tidytemps</a></code> </p>
-          </td>
-          <td><p>Assert that a data frame conforms to tidytemps</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="electricity.html">electricity</a></code> </p>
-          </td>
-          <td><p>Sample electricity consumption</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="mutate_y.html">mutate_y</a></code> </p>
-          </td>
-          <td><p>reprex for using rlang pronouns in functions</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="mute_date.html">mute_date</a></code> </p>
-          </td>
-          <td><p>Characterize a data frame using date</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="pipe.html">%&gt;%</a></code> </p>
-          </td>
-          <td><p>Pipe</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <p><code>data</code> with two new columns, <code>date</code> and <code>date_index</code></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Adds two additional columns: (TODO)</p>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
+
   </div>
 </div>
 

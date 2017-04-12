@@ -19,9 +19,13 @@ URL: https://github.com/ijlyttle/tidytemps
 BugReports: https://github.com/ijlyttle/tidytemps/issues
 RoxygenNote: 6.0.1.9000
 Imports: assertthat,
-    magrittr
+    magrittr,
+    dplyr,
+    lubridate,
+    rlang
 Suggests: testthat,
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    tidyverse
 VignetteBuilder: knitr

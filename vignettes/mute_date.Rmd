@@ -11,3 +11,51 @@ vignette: >
 
 Here, I will show how to use the `mute_date()` function.
 
+Just a couple simple questions, at first:
+
+1. What should the API look like?
+
+1. What should the function do?
+
+For the API, I am imagining something like this:
+
+```r
+mute_date(data = electricity, duration_ref = dhours(2))
+```
+
+Argument        | Type       | Description
+--------------- | ---------- | -------------------------------------------------
+`data`          | data frame | tidytemps-compliant data frame
+`duration_ref`  | numeric    | number of seconds after local midnight when a date-batch starts
+
+There is a deeper idea here about batches. We take a one-dimensional time-series and and "bend" it into two dimensions: say `batch` and `batch_index`. In this case, we may think of `date` and `date_index`.
+
+The function returns a modified copy of `data`, adding two columns:
+
+Variable        | Type       | Description
+--------------- | ---------- | -------------------------------------------------
+`date`          | Date       | date, using local timezone, at the start of the date-batch
+`date_index`    | double     | time (duration) since the local midnight corresponding to `date` (s)
+
+
+Let's try this out:
+
+```{r}
+library("tidytemps")
+library("lubridate")
+library("tidyverse")
+```
+
+```{r}
+electricity_date <-
+  electricity %>%
+  mute_date(dhours(2)) 
+
+glimpse(electricity_date)
+```
+
+```{r}
+electricity_date %>%
+  ggplot(aes(x = date_index, y = consumption_rate)) +
+  geom_line(aes(color = as.factor(date)))
+```

@@ -2,4 +2,7 @@
 
 export("%>%")
 export(assert_tidytemps)
+export(mutate_y)
+export(mute_date)
 importFrom(magrittr,"%>%")
+importFrom(rlang,.data)
