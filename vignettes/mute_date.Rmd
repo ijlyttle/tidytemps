@@ -1,0 +1,13 @@
+---
+title: "Mute date"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Mute date}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Here, I will show how to use the `mute_date()` function.
+
