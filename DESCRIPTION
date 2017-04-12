@@ -20,3 +20,5 @@ BugReports: https://github.com/ijlyttle/tidytemps/issues
 RoxygenNote: 6.0.1.9000
 Imports: assertthat,
     magrittr
+Suggests: testthat,
+    covr

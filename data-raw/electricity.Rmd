@@ -1,0 +1,18 @@
+# electricty
+
+```{r}
+library("lubridate")
+library("tidyverse")
+```
+
+```{r}
+dtm_ref <- ymd_hms("2013-04-01 00:00:00", tz = "America/Chicago")
+interval_duration_ref <- as.numeric(dminutes(15))
+
+```
+
+```{r}
+electricity <- tibble(
+  
+)
+```

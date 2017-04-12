@@ -14,11 +14,12 @@ assert_tidytemps(data)
 }
 \description{
 Many of the functions in this package assume that data frames supplied
-to them conform to a "standard":
+to them conform to a "standard".
 }
 \details{
-This function is used to assert that a data frame conforms to
-this standard:
+This function will either raise an error, or return the data frame it was sent.
+
+This is the standard expected of the data frame:
 \itemize{
 \item it has columns \code{interval_start} and \code{interval_duration}
 \item the column \code{interval_start} is POSIXct (although we should think of relaxing that to numeric)
