@@ -22,12 +22,13 @@ mute_date <- function(data, duration_ref = lubridate::dhours(0)) {
     (data[["interval_start"]] - duration_ref) %>%
     lubridate::floor_date(unit = "day")
 
-  # in the fullnes of time make sure that we are referring to the environment
   data <-
     data %>%
-    dplyr::mutate(
-      date = lubridate::as_date(dtm_date_start),
-      date_index = as.numeric(.data$interval_start) - as.numeric(dtm_date_start)
+    dplyr::mutate_(
+      .dots = list(
+        date = ~lubridate::as_date(dtm_date_start),
+        date_index = ~as.numeric(interval_start) - as.numeric(dtm_date_start)
+      )
     )
 
   data
